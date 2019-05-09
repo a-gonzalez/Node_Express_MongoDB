@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Edit Coin</title>
+		
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+		<script src="/js/jquery-3.4.1.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+
+		<style>
+		.btn
+		{
+			width: 90px;
+		}
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button
+		{ 
+  			-webkit-appearance: none; 
+  			margin: 0; 
+		}
+
+		input[type=number]
+		{
+			-moz-appearance: textfield;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Edit Coin</h1>
+			<form method="post" action="/coins/edit/<%= coin.id %>">
+				<div class="form-group col-md-3">
+					<label for="name">Name</label>
+					<input type="text" required value="<%= coin.name %>" tabindex="1" class="form-control" id="name" name="name" />
+				</div>
+				<div class="form-group col-md-3">
+					<label for="name">Price</label>
+					<input type="number" step="any" required value="<%= coin.price.toFixed(2) %>" tabindex="2" class="form-control" id="price" name="price" />
+				</div>
+				<div class="form-group col-md-3">
+					<label for="epoch">Date</label>
+					<div class="form-control">
+						<%= new Date(coin.epoch).toLocaleString() %>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="epoch">Modified</label>
+					<div class="form-control">
+						<%= new Date(coin.modified).toLocaleString() %>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<button type="submit" tabindex="3" class="btn btn-default btn-outline-primary">Update</button>
+					&nbsp;
+					<a href="/coins" tabindex="4" class="btn btn-outline-primary">Cancel</a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

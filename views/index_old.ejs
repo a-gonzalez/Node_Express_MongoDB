@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<title>Coin Index</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>
+							Name
+						</td>
+						<td>
+							Price
+						</td>
+						<td colspan="2">
+							Action
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+					for (let i = 0; i < coins.length; i++)
+					{
+					%>
+					<tr>
+						<td>
+							<%= coins[i].name %>
+						</td>
+						<td>
+							<%= coins[i].price %>
+						</td>
+						<td>
+							<a href="" class="btn btn-primary">Edit</a>
+						</td>
+						<td>
+							<a href="" class="btn btn-danger">Remove</a>
+						</td>
+					</tr>
+					<%
+					}
+					%>
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+</html>
